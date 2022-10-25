@@ -1,10 +1,18 @@
 /**
- * (1pt) - Crie uma interface GameBannerProps com os três atributos passados vindos da das props
+ * (1pt) - Crie uma interface GameBannerProps com os três atributos passados vindos das props
  * (2pt) - Use a interface como o tipo das props do componente e substitua os 
  *          atributos estáticos das imagem (src), titulo e contador de anuncios pelas respectivas props
  */
 
+ interface GameBannerProps{
+  key:String;
+  bannerUrl: string;
+  title:String;
+  adsCount:number;
+}
+
 export function GameBanner() {
+  
   return (<><a href="" className="relative rounded-lg overflow-hidden">
     <img src="https://static-cdn.jtvnw.net/ttv-boxart/32982_IGDB-188x250.jpg" alt="" />
 
