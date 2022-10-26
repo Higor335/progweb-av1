@@ -16,12 +16,10 @@ function App() {
   /**
    * (2pt) Crie uma variável de estado com o nome 'games' e defina como inicialmente um array vazio
    */
-
   const [games,setGames] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:3333/games').then(response => response.json()).then(data => {
-
       /**
        * (1pt) atribua o conteúdo 'data' para a variável games
        */
@@ -47,18 +45,17 @@ function App() {
          *        - title: contem a string do titulo do jogo
          *        - adsCount: contém o número de ads de dentro de _count
          */
+         games &&
+          games.map((games : Game)=>
+            <GameBanner key={games.id} bannerUrl={games.bannerUrl} title={games.title} adsCount={games._count.ads}/>
+          )
+      
       }
-
       {
         /**
          * Remova o trecho abaixo quando inserir o conteúdo da resposta acima
          */
       }
-      <GameBanner />
-      <GameBanner />
-      <GameBanner />
-      <GameBanner />
-      <GameBanner />
 
     </div>
 
